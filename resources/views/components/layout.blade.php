@@ -35,11 +35,15 @@
                             </div>
                           @endguest
                           @auth
-                            <div class="hidden md:block">
+                            {{-- <div class="hidden md:block">
                                 <div class="ml-4 flex items-center md:ml-6">
                                     <x-nav-link href="/logout">Log Out</x-nav-link>
                                 </div>
-                            </div>
+                            </div> --}}
+                            <form action="/logout" method="post">
+                                @csrf
+                                <x-form-button>Log Out</x-form-button>
+                            </form>
                           @endauth
                         <div class="-mr-2 flex md:hidden">
                             <!-- Mobile menu button -->
